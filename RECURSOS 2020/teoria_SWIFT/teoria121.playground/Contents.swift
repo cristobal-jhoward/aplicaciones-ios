@@ -4,22 +4,49 @@ import UIKit
 
 // Variables y constantes
 
+var size : Float = 42.0
+
+var answer = 42
+
+let name : String = "Anakin"
+
 /**/
 
 // Todo es un objeto
 
+
 // Propiedad de clase (propiedad estática)
+
+
+Int.max
+
+
+// Método de clase (método estático)
+Double.minimum(12, 3)
+
+
 
 /**/
 
-// Método de clase (método estático)
+
 
 /**/
 // Las conversiones se hacen con inicializadores
 
+
+
+let a = Int(size)
+let ans = String(answer)
+
 /**/
 
 // typealias - Para dar otros nombres a un tipo
+
+typealias Entero = Int
+
+let a1 : Entero = 5
+
+
 
 /**/
 
