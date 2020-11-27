@@ -54,17 +54,40 @@ let a1 : Entero = 5
 
 // String
 
+
+var swift = "Nuevo lengiaje de Apple"
+
+swift = swift + "!"
+
 /**/
 
 // Arrays
+
+var words : [String] = ["uno", "dos", "tres"]
+
+words[0]
+
+var rr = Array<String>()
+
+var rrr : [String] = []
+
+rr.append("hola")
+
+rrr.append("adios")
+
 
 /**/
 
 // Los diccionarios no tienen orden
 
-/**/
+
+let numberNames : [Int : String] = [1: "one", 2: "two"]
 
 // Accedemos por la clave a los diccionarios
+numberNames[2]
+/**/
+
+
 
 /**/
 
@@ -74,18 +97,61 @@ let a1 : Entero = 5
 // Cualquier objeto se puede convertir en cadena ahí dentro si implementa un protocolo. Dicho protocolo tiene una propiedad que lo convierte en cadena
 // Swift esta hecho de protocolos
 
+
+
+
+var total = " "
+
+
+for element in [1, 2, 3, 4, 5, 6, 7, 8, 9]{
+    
+    total = "\(total) -\(element)"
+    
+}
+
+print(total)
+
+var todos = "mis numeros son:"
+
+for each in words {
+    
+    todos = "\(todos) \(each)"
+    
+}
+
+print(todos)
+
 /**/
 
 // (key, value) Es una tupla
+
+
+
+for (key, value) in numberNames {
+    
+    dump("\(key) --- \(value)")
+}
 
 /**/
 
 // Tupla - Tipo agregados (en ellos se asocian cosas diferentes).
 // Es algo parecido a un objeto pero más trivial
 
+
+let pair = (1, "one")
+
+pair.0
+pair.1
+
 /**/
 
 // 1...5 es un Rango
+
+
+for i in 1...10{
+    
+    dump("\(i) * 5 = \(i*5)")
+}
 
 /**/
 
@@ -98,9 +164,31 @@ let a1 : Entero = 5
 
 // Toda función captura el valor de las variables que estaban en el entorno léxico cuando ella fue creada
 
+
+func hacerAlgo(conEsteNumero a: Int, yEsteOtro b: Int) -> Int{
+    
+    return (a + b) * b
+    
+}
+
+hacerAlgo(conEsteNumero: 3, yEsteOtro: 4)
+
+
+
+
+
 /**/
 
 // Función sin nombre externo: la variable anónima _
+
+
+func f(a: Int, _ b:Int) -> Int{
+    
+    return a + b
+}
+
+
+f(a: 4, 5)
 
 /**/
 
@@ -108,30 +196,134 @@ let a1 : Entero = 5
 
 /**/
 
+func sum(_ a:Int, _ b:Int, thenMultiplyBy c:Int) -> Int {
+    
+    return (a + b) * c
+}
+
+sum(2, 4, thenMultiplyBy: 3)
+ 
+
 // Parámetros con valores por defecto
+
+func addSuffix(_ a: String, suffix: String = "ingly") -> String {
+    
+    return a + suffix
+}
+
+addSuffix("accord")
+
+addSuffix("Objective", suffix: "C")
+
+
+
 
 /**/
 
 // Las funciones que devuelven muchos valores realmente devuelven una tupla
 
+
+func nameOf(number a : Int) -> (Int, String, String){
+    
+    
+    var val: (Int, String, String)
+    
+    switch a{
+        
+    case 1:
+        val = (1, "one", "uno")
+        
+    case 2:
+        val = (2, "two", "tres")
+        
+    default:
+        val = (a, "Go check Google translate", "y dedame en paz")
+    }
+    
+    return(val)
+}
+
+let r = nameOf(number: 2)
+
+r.0
+r.1
+r.2
+
 /**/
 
 // Funciones de alto nivel
+
+typealias IntToInt = (Int) -> Int
+
+
+var z : IntToInt
+
+func apply(_ f: IntToInt, n: Int) -> Int {
+    
+    return f(n)
+    
+}
+
+func doubler(a:Int) -> Int {
+     
+    return a * 2
+    
+}
+
+
+func add42(a:Int) -> Int {
+    
+    return a + 42
+    
+}
+
+
+apply(add42, n: 4)
+
+apply(doubler, n: 4)
+    
+    
+    
 
 /**/
 
 // Funciones como parámetros. Aquí no tenemos que poner @escaping porque f se ejecuta dentro de apply
 
+
+func compose(_ f: @escaping IntToInt, h: @escaping IntToInt) -> IntToInt {
+    
+    func comp(a:Int) -> Int {
+        
+        return f(h(a))
+    }
+    
+    return comp
+    
+}
+
+let com = compose(add42, h: doubler)
+
+com(8)
+
 /**/
 
 
-// Funciones como valores de retorno
-// @escaping: las funcones f y h que pasamos como parámetro no se ejecutan dentro de compose
 
 /**/
 
 
 // Funciones de un mismo tipo, en un array
+
+
+let funcs = [add42, doubler, com]
+
+
+
+for fun in funcs {
+    
+    print(fun(33))
+    
+}
 
 /**/
 
