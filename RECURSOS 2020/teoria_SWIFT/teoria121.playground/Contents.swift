@@ -331,47 +331,110 @@ for fun in funcs {
 // CLOSURES (Representación literal de funciones)
 // Capturan el valor de las variables que estaban en el entorno léxico cuando ella fue creada
 
+
+func g (a:Int) -> Int {
+    
+    return a + 42
+    
+}
+
 /**/
 
 // exactamente igual que ....
+
+let gg = { (a:Int) -> Int in
+    
+    return a + 42 }
+
+g(a: 1)
+
+gg(1)
+
 
 /**/
 
 // Sintaxis simplificada de clausuras
 
+let closures : [ (Int) -> Int ] = [g,
+                                   { (a:Int) -> Int in return a + 42 },
+                                   
+                                   {a in return a + 45},
+                                   {a in a/42},
+                                   {$0 * 42}
+
+                                    ]
+
+closures[2](6)
+
+
+
 /**/
 
 // Los operadores son clausuras
 
-/**/
+typealias BinaryFunc = (Int, Int) -> IntegerLiteralType
+let applier = { (f: BinaryFunc, m: Int, n: Int)  -> Int in
+    
+    return f(m, n)
+
+}
 
 // Podemos pasarle operadores en lugar de una clausura. * es una función
+applier( *, 2, 3 )
 
-/**/
+
 
 // Trailing clousure: Cuando la función es pasada como último parámetro
 
-/**/
+
+func applierInv(m: Int, n: Int, f: BinaryFunc) -> Int {
+    
+    return applier(f, m, n)
+}
+
 
 // Puedo hacer esto $ porque la función BinaryFunc dice que entran 2 Int y devuelve otro Int
 
-/**/
+let c = applierInv(m: 2, n: 4, f: { $0 * 2 + $1 * 3})
 
 // El tercer parámetro queda colgando
 
-/**/
+let cc = applierInv(m: 2, n: 4) { $0 * 2 + $1 * 3 }
+
 
 // OPCIONALES - empaqueto algo dentro de un opcional
 
-/**/
+
+
+var maybeAString : String? = "I`m boxed"
+
+
+//print(maybeAString)
+
+var maybeAnInt : Int?
+
+
 
 // desempaquetado seguro por si hubiese un nil
 
-/**/
+if let certainlyAString = maybeAString {
+    
+    print("Es una cadena")
+    print(certainlyAString)
+}
+
+
+if let certainlyAnInt = maybeAString {
+    
+    print("Es una entero")
+    print(certainlyAnInt)
+}
+
+
 
 // Desempaquetado peligroso
 
-// var allaVoy : Int = maybeAnInt!
+//var allaVoy : Int = maybeAnInt!
 
 // opcional desempaquetado de forma explícita
 
@@ -380,13 +443,21 @@ for fun in funcs {
 
 // Optiona Chaining
 
-/**/
+let n : String? = "Anakin Skywalker"
+let nn : String = "Cristobal Jimenez"
+
 
 // Las funciones que aceptan tipos String pueden también aceptar tipos String?.
 // ?. => Es un operador mágico.
 // Dichas funciones solo devuelven algo si lo que hay en el opcional no es nil
 
-/**/
+let firstName = nn.components(separatedBy: " ")
+let firstNameAnakin = n?.components(separatedBy: " ")
+
+
+let caps = firstNameAnakin?[0].uppercased()
+
+print(caps!)
 
 
 // GUARD
@@ -418,18 +489,50 @@ for fun in funcs {
 // El tipo Optional es una enum con los valores (some, none)
 // Podríamos darle valores a los estados pero por ahora lo dejamos así
 
+
+
+
 // VALORES PARA LAS ENUMS:
 // - ninguno (LightSabreColor)
 // - Tipo homogéneo que se accede con la propiedad rawValue (Las veremos)
 // - Tipos asociados, distintos en cada caso. Por ejemplo, Optional.
 
-/**/
+enum LightSaberColor {
+    
+    case blue, red, green, purple
+    
+}
 
 // STRUCTS
 // Se gestionan de forma diferente que las clases.
 // Se usan para cosas sencillas y en programación funcional
 
-/**/
+struct LightSaber {
+    
+    //Propiedad estatica o de clase
+    static let informar = "Una elegante arma del futuro"
+    
+    // Proiedad computada
+    
+    var color: LightSaberColor = .blue{
+        
+        willSet(newValue) {
+            
+            print("El nuevo color es \(newValue)")
+        }
+    }
+    
+    // Propiedad de instancia
+    var IsDoubleBlade : Bool = false
+    
+}
+
+LightSaber.informar
+
+var aa = LightSaber(color: .green, IsDoubleBlade: true)
+aa.IsDoubleBlade
+
+aa.color = .red
 
 // CLASS
 // REGLAS:
@@ -437,7 +540,32 @@ for fun in funcs {
     // Usa opcionale solo cuando sea preciso
     // No uses ! a no ser que sepas lo que estas haciendo
 
-/**/
+class Jedi {
+    
+    //variables de instancia
+    var lightSaber : LightSaber = LightSaber()
+    var name : String = " "
+    var midichlorians = 1000
+    var master : Jedi?
+    var padawan : Jedi?
+    
+    //variables computadas
+    
+    var fullName : String {
+        
+        get{
+            var full = name
+            
+            if let maestro = master {
+                full = full + "padawan of \(maestro.name)"
+        }
+    }
+    
+    
+    
+    
+    
+}
 
 
 
