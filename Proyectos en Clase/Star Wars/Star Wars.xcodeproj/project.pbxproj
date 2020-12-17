@@ -13,6 +13,10 @@
 		AF2DBF5D256C3BFE0055D35B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2DBF5B256C3BFE0055D35B /* LaunchScreen.storyboard */; };
 		AF2DBF6A256C3EC90055D35B /* leia.caf in Resources */ = {isa = PBXBuildFile; fileRef = AF2DBF68256C3EC90055D35B /* leia.caf */; };
 		AF2DBF6B256C3EC90055D35B /* leia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF2DBF69256C3EC90055D35B /* leia.jpg */; };
+		AF9B3761258BB348005BECB4 /* StarWarsAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B3760258BB348005BECB4 /* StarWarsAffiliation.swift */; };
+		AF9B3763258BB362005BECB4 /* StarWarsCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B3762258BB362005BECB4 /* StarWarsCharacter.swift */; };
+		AF9B3766258BB5FB005BECB4 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B3764258BB5FA005BECB4 /* CharacterViewController.swift */; };
+		AF9B3767258BB5FB005BECB4 /* CharacterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF9B3765258BB5FA005BECB4 /* CharacterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		AF2DBF5E256C3BFE0055D35B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF2DBF68256C3EC90055D35B /* leia.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = leia.caf; sourceTree = "<group>"; };
 		AF2DBF69256C3EC90055D35B /* leia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leia.jpg; sourceTree = "<group>"; };
+		AF9B3760258BB348005BECB4 /* StarWarsAffiliation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAffiliation.swift; sourceTree = "<group>"; };
+		AF9B3762258BB362005BECB4 /* StarWarsCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCharacter.swift; sourceTree = "<group>"; };
+		AF9B3764258BB5FA005BECB4 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		AF9B3765258BB5FA005BECB4 /* CharacterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,8 @@
 		AF2DBF65256C3D5D0055D35B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AF9B3760258BB348005BECB4 /* StarWarsAffiliation.swift */,
+				AF9B3762258BB362005BECB4 /* StarWarsCharacter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -88,6 +98,8 @@
 		AF2DBF66256C3D6F0055D35B /* Controlers */ = {
 			isa = PBXGroup;
 			children = (
+				AF9B3764258BB5FA005BECB4 /* CharacterViewController.swift */,
+				AF9B3765258BB5FA005BECB4 /* CharacterViewController.xib */,
 			);
 			path = Controlers;
 			sourceTree = "<group>";
@@ -160,6 +172,7 @@
 				AF2DBF6A256C3EC90055D35B /* leia.caf in Resources */,
 				AF2DBF5D256C3BFE0055D35B /* LaunchScreen.storyboard in Resources */,
 				AF2DBF6B256C3EC90055D35B /* leia.jpg in Resources */,
+				AF9B3767258BB5FB005BECB4 /* CharacterViewController.xib in Resources */,
 				AF2DBF5A256C3BFE0055D35B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,6 +185,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF2DBF51256C3BFD0055D35B /* AppDelegate.swift in Sources */,
+				AF9B3766258BB5FB005BECB4 /* CharacterViewController.swift in Sources */,
+				AF9B3761258BB348005BECB4 /* StarWarsAffiliation.swift in Sources */,
+				AF9B3763258BB362005BECB4 /* StarWarsCharacter.swift in Sources */,
 				AF2DBF53256C3BFD0055D35B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -464,7 +464,33 @@ print(caps!)
 // Impide que ningún parámetro indebido interfiera con una función.
 // Acepta tanto expresiones booleanas como desempaquetados seguros, como if.
 
-/**/
+func foo(nombre: String?, _ edad: Int?) -> Bool {
+    
+    guard nombre != nil || edad != nil else{
+        print("La fastidiamos")
+        return false
+    }
+    
+    guard let name = nombre else {
+        print("Como no se tu nombre no me interesa tu edad")
+        return false
+    }
+    
+    guard let age = edad else {
+        print("Su nombre es \(name) pero  no sé su edad")
+        return false
+    }
+    
+    
+    print("Su nombre es \(name) y su edad es \(age)")
+    
+    return true
+}
+//foo(nombre: "Ana", 22)
+// foo(nombre: nil, nil)
+// foo(nombre: nil, 23)
+foo(nombre: "Luis", nil)
+
 
 // UTILIZACIÓN DE GUARD, IF LET Y ?.
 
@@ -559,13 +585,25 @@ class Jedi {
             if let maestro = master {
                 full = full + "padawan of \(maestro.name)"
         }
+            return full
+    }
+
+}
+    
+    
+    init(name: String, midichlorians: Int, lightSaber : LightSaber, master : Jedi?, padawan : Jedi?){
+        
+        self.name = name
+        self.midichlorians = midichlorians
+        self.lightSaber = lightSaber
+        self.master = master
+        self.padawan = padawan
+        
     }
     
-    
-    
-    
-    
 }
+
+let pepe = Jedi(name: "Pepe", midichlorians: <#T##Int#>, lightSaber: <#T##LightSaber#>, master: <#T##Jedi?#>, padawan: <#T##Jedi?#>)
 
 
 
