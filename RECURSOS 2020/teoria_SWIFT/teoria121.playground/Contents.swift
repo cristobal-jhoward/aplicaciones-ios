@@ -603,7 +603,7 @@ class Jedi {
     
 }
 
-let pepe = Jedi(name: "Pepe", midichlorians: <#T##Int#>, lightSaber: <#T##LightSaber#>, master: <#T##Jedi?#>, padawan: <#T##Jedi?#>)
+//let pepe = Jedi(name: "Pepe", midichlorians: <#T##Int#>, lightSaber: <#T##LightSaber#>, master: <#T##Jedi?#>, padawan: <#T##Jedi?#>)
 
 
 
@@ -612,6 +612,51 @@ let pepe = Jedi(name: "Pepe", midichlorians: <#T##Int#>, lightSaber: <#T##LightS
 // Si se añaden propiedades deben tener valor o ser opcionales
 
 /**/
+
+
+
+//CLASES Y ESTRUCTURAS
+
+class Persona{
+    
+    var nombre : String = "Pedro"
+    var edad : Int
+    
+    init(edad: Int){
+        self.edad = edad
+    }
+    
+}
+
+let personaUno = Persona(edad: 24)
+
+print("Me llamo \(personaUno.nombre)")
+
+var personaDos = personaUno
+
+personaDos.nombre = "Sergio"
+
+print("Me llamo \(personaDos.nombre)")
+
+print("¿Como que me llamo \(personaUno.nombre)")
+
+
+struct Person {
+    
+    var name = "Pedro"
+    
+    var age : Int
+}
+
+let personOne = Person(age: 24)
+
+print("Me llamo \(personOne.name)")
+
+var personTwo = personOne
+
+personTwo.name = "Sergio"
+
+print("Me llamo \(personTwo.name)")
 
 
 // Exensiones
