@@ -37,6 +37,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let nav = UINavigationController(rootViewController: vc)
         
+        nav.navigationBar.barTintColor = .systemGray6
+        
         window?.rootViewController = nav
         
         window?.makeKeyAndVisible()

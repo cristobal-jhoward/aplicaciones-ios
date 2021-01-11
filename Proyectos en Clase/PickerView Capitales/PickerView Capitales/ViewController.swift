@@ -33,6 +33,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
             modelo = ciudadesAM
         }
+        
+        miPickerView.reloadAllComponents()
+        
+         
+         sincronizarVistaModelo(model: modelo, index: fila)
     }
     
     

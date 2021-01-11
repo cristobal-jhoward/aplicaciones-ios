@@ -603,7 +603,7 @@ class Jedi {
     
 }
 
-//let pepe = Jedi(name: "Pepe", midichlorians: <#T##Int#>, lightSaber: <#T##LightSaber#>, master: <#T##Jedi?#>, padawan: <#T##Jedi?#>)
+//let pepe = Jedi(name: "Pepe", midichlorians: 1000, lightSaber: LightSaber(), master: nil, padawan: nil)
 
 
 
@@ -657,6 +657,63 @@ var personTwo = personOne
 personTwo.name = "Sergio"
 
 print("Me llamo \(personTwo.name)")
+
+
+struct Actor{
+    var name: String
+    var friendsName: String
+    
+    
+}
+
+let actor1 = Actor(name: "Jennifer Aniston", friendsName: "Rachel Green")
+
+var actor2 = actor1
+
+actor2.name = "David Schwimmer"
+actor2.friendsName = "Ross Geller"
+
+actor1.name
+actor2.name
+
+class Friends {
+    var title: String
+    let coffeShop: String
+    var actors: [Actor]?
+    
+    init(title: String, coffeShop: String){
+        
+        self.title = title
+        self.coffeShop = coffeShop
+    }
+    
+    convenience init(title: String, coffeShop: String, actors:[Actor]){
+        
+        self.init(title: title, coffeShop: coffeShop)
+        self.actors = actors
+    }
+    
+}
+
+let serie = Friends(title: "Friends", coffeShop: "Central Perk")
+let serie2 = Friends(title: "Friends", coffeShop: "Central Perk", actors: [])
+
+serie2.actors
+serie2.actors?.append(actor1)
+serie2.actors?.append(actor2)
+
+serie2.actors?.first?.name
+
+serie2.actors?.append(contentsOf: [
+
+        Actor(name: "Matt Leblanc", friendsName: "Joey Tribbiani"),
+        Actor(name: "Lisa Kudrow", friendsName: "Phoebe Buffay"),
+        Actor(name: "Courteney Cox", friendsName: "Monica Geller"),
+        Actor(name: "Matthew Perry", friendsName: "Chandler Bing"),
+
+])
+
+// CLOSURES
 
 
 // Exensiones

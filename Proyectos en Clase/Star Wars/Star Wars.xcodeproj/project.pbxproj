@@ -13,6 +13,9 @@
 		AF2DBF5D256C3BFE0055D35B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2DBF5B256C3BFE0055D35B /* LaunchScreen.storyboard */; };
 		AF2DBF6A256C3EC90055D35B /* leia.caf in Resources */ = {isa = PBXBuildFile; fileRef = AF2DBF68256C3EC90055D35B /* leia.caf */; };
 		AF2DBF6B256C3EC90055D35B /* leia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF2DBF69256C3EC90055D35B /* leia.jpg */; };
+		AF7B10CA25ACCB4500CAF2A4 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B10C825ACCB4500CAF2A4 /* WikiViewController.swift */; };
+		AF7B10CB25ACCB4500CAF2A4 /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF7B10C925ACCB4500CAF2A4 /* WikiViewController.xib */; };
+		AF7B10CE25ACCBD500CAF2A4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF7B10CD25ACCBD500CAF2A4 /* WebKit.framework */; };
 		AF9B3761258BB348005BECB4 /* StarWarsAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B3760258BB348005BECB4 /* StarWarsAffiliation.swift */; };
 		AF9B3763258BB362005BECB4 /* StarWarsCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B3762258BB362005BECB4 /* StarWarsCharacter.swift */; };
 		AF9B3766258BB5FB005BECB4 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B3764258BB5FA005BECB4 /* CharacterViewController.swift */; };
@@ -28,6 +31,9 @@
 		AF2DBF5E256C3BFE0055D35B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF2DBF68256C3EC90055D35B /* leia.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = leia.caf; sourceTree = "<group>"; };
 		AF2DBF69256C3EC90055D35B /* leia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leia.jpg; sourceTree = "<group>"; };
+		AF7B10C825ACCB4500CAF2A4 /* WikiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
+		AF7B10C925ACCB4500CAF2A4 /* WikiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
+		AF7B10CD25ACCBD500CAF2A4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		AF9B3760258BB348005BECB4 /* StarWarsAffiliation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAffiliation.swift; sourceTree = "<group>"; };
 		AF9B3762258BB362005BECB4 /* StarWarsCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCharacter.swift; sourceTree = "<group>"; };
 		AF9B3764258BB5FA005BECB4 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF7B10CE25ACCBD500CAF2A4 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +57,7 @@
 			children = (
 				AF2DBF4F256C3BFD0055D35B /* Star Wars */,
 				AF2DBF4E256C3BFD0055D35B /* Products */,
+				AF7B10CC25ACCBD500CAF2A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +108,8 @@
 			children = (
 				AF9B3764258BB5FA005BECB4 /* CharacterViewController.swift */,
 				AF9B3765258BB5FA005BECB4 /* CharacterViewController.xib */,
+				AF7B10C825ACCB4500CAF2A4 /* WikiViewController.swift */,
+				AF7B10C925ACCB4500CAF2A4 /* WikiViewController.xib */,
 			);
 			path = Controlers;
 			sourceTree = "<group>";
@@ -109,6 +119,14 @@
 			children = (
 			);
 			path = Framework;
+			sourceTree = "<group>";
+		};
+		AF7B10CC25ACCBD500CAF2A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF7B10CD25ACCBD500CAF2A4 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +191,7 @@
 				AF2DBF5D256C3BFE0055D35B /* LaunchScreen.storyboard in Resources */,
 				AF2DBF6B256C3EC90055D35B /* leia.jpg in Resources */,
 				AF9B3767258BB5FB005BECB4 /* CharacterViewController.xib in Resources */,
+				AF7B10CB25ACCB4500CAF2A4 /* WikiViewController.xib in Resources */,
 				AF2DBF5A256C3BFE0055D35B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +207,7 @@
 				AF9B3766258BB5FB005BECB4 /* CharacterViewController.swift in Sources */,
 				AF9B3761258BB348005BECB4 /* StarWarsAffiliation.swift in Sources */,
 				AF9B3763258BB362005BECB4 /* StarWarsCharacter.swift in Sources */,
+				AF7B10CA25ACCB4500CAF2A4 /* WikiViewController.swift in Sources */,
 				AF2DBF53256C3BFD0055D35B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -49,6 +49,14 @@ class CharacterViewController: UIViewController {
         player.play()
     }
     
+    @IBAction func displayWiki(_ sender: Any) {
+        
+        let wVC = WikiViewController(model: model)
+        
+        navigationController?.pushViewController(wVC, animated: true)
+    }
+    
+    
     func syncModelWithView(){
         
         photoView.image = model.photo
@@ -76,10 +84,7 @@ class CharacterViewController: UIViewController {
     */
     
     
-    @IBAction func displayWiki(_ sender: Any) {
-        
-        print("Se abre la Wiki del personaje")
-    }
+
     
 
 }

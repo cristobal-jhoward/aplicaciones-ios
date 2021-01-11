@@ -32,7 +32,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="tqk-69-Sat"/>
                         <barButtonItem title="Wiki" id="xfA-Hx-Xqj">
                             <connections>
-                                <action selector="displayWiki:" destination="-1" id="4Ig-ah-3Hn"/>
+                                <action selector="displayWiki:" destination="-1" id="kHP-N9-z4v"/>
                             </connections>
                         </barButtonItem>
                     </items>
