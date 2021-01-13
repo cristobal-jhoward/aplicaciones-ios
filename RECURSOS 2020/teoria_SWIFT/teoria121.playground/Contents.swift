@@ -716,6 +716,97 @@ serie2.actors?.append(contentsOf: [
 // CLOSURES
 
 
+let actors: [Actor] = []
+
+serie2.actors?.forEach { actor in
+    print(actor.name)
+}
+
+serie2.actors?.forEach{ print($0.name)}
+
+if let actors = serie2.actors{
+    for actor in actors {
+        print(actor.name)
+    }
+}
+
+//Tres formas distintas dehacer lo mismo en CLOSURES
+
+func sayHellowActors(to name : String){
+    serie2.actors?.forEach{ (actor) in
+        print("Saludos de \(actor.name) a \(name)")
+    }
+}
+
+sayHellowActors(to: "David")
+
+var completionHandlers = [(String) -> Void]()
+
+func loadJoeyPizza(callback: @escaping (String) -> Void ){
+    completionHandlers.append(callback)
+}
+
+loadJoeyPizza {name in
+    print("Joey ha comido en \(name)")
+}
+
+loadJoeyPizza { print("Raquel a comido en \($0)") }
+
+completionHandlers.forEach { $0("Pizzería de Don Cangrejo")}
+
+
+let actorFiltered = serie2.actors?.filter{ actor -> Bool in
+    return actor.name.count > 15
+}
+
+print(actorFiltered ?? [])
+
+let actorfiltered2 = serie2.actors?.filter{ $0.name.count > 14 }
+
+print(actorfiltered2 ?? [])
+
+if let actors = serie2.actors {
+    
+    var actorName: [String] = []
+    
+    for each in actors {
+        actorName.append(each.name)
+    }
+
+    print(actorName)
+
+}
+
+let actorsName = serie2.actors?.map{ $0.name }
+
+print(actorsName ?? [])
+
+serie2.actors?.compactMap{ $0.name}
+
+let actorW = serie2.actors?.first(where: { actor -> Bool in
+    return actor.name.contains("w")
+})
+
+print(actorW?.name ?? "")
+
+var numbers = [1, 5, 6, 12, 8, 7]
+
+let result = numbers.reduce(0) { (suma, number) -> Int in
+    return suma + number
+}
+
+print(result)
+
+let actorsNamecount = serie2.actors?.reduce(0) { (totalCount, actor) -> Int in
+    return totalCount + actor.name.count
+}
+
+print(actorsNamecount ?? 0)
+
+let actorsNamecount2 = serie2.actors?.reduce(0) { $0 + $1.name.count }
+
+print(actorsNamecount ?? 0)
+
 // Exensiones
 // Añadir código a clases preexistentes
 // No se pueden añadir propiedades stored (de instancia)
