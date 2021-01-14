@@ -812,7 +812,134 @@ print(actorsNamecount ?? 0)
 // No se pueden añadir propiedades stored (de instancia)
 // No se pueden añadir inits designados, sí de conveniencia
 
-/**/
+struct CoffeeShop {
+    var clients: [String]
+    var coffees: Int
+    
+    var coffeesPerClient: Float{
+        get {
+            return Float(coffees / clients.count)
+        }
+        set{
+            coffees = Int(newValue) * clients.count
+        }
+    }
+}
+
+var cafeteriaBBAA = CoffeeShop(clients: ["Cristobal","Anotonio","Cristina", "David", "Belen", "Manuel", "Andreu", "Fernando"], coffees: 16)
+
+cafeteriaBBAA.coffeesPerClient
+cafeteriaBBAA.coffeesPerClient = 3
+
+cafeteriaBBAA.coffees
+
+cafeteriaBBAA.clients.count
+
+struct CoffeeShopObservers {
+    var coffees: Int{
+        willSet(newTotalCoffees){
+            print("Viene más café: \(newTotalCoffees)")
+        }
+        didSet{
+            print("Tenemos ya más café: \(coffees)")
+        }
+    }
+}
+
+var vigiloCafes = CoffeeShopObservers(coffees: 1)
+
+vigiloCafes.coffees = 4
+
+//EXTENSIONES
+// Añaden codigo a clases preexistentes
+
+typealias Euro = Double
+
+extension Euro {
+    
+    var _€: Double{
+        return self
+    }
+    
+    var _$: Double{
+        return self * 0.8
+    }
+    
+    var yen: Double{
+        return self * 0.008
+    }
+    
+    var rub: Double{
+        return self * 0.01
+    }
+}
+
+var totalEuros : Euro = 123._€ + 45.08._$ + 3400.yen + 2800.rub
+
+typealias Task = () -> Void
+
+extension Int {
+    
+    mutating func square(){
+        self = self * self
+    }
+    
+    func isGreaterThan(other: Int) -> Bool {
+        return self > other
+    }
+    
+    func times(task: Task){
+        for _ in 1...self {
+            task()
+        }
+    }
+}
+
+var ageExtension = 8
+
+ageExtension.square()
+ageExtension.isGreaterThan(other: 10)
+
+4.times {
+    print("Ya hemos terminado")
+}
+
+extension String {
+    
+    func numberOf(char: String) -> Int {
+        
+        return self.filter { stringChar -> Bool in
+            return char.compare("\(stringChar)") == .orderedSame
+        }.count
+    }
+    
+}
+
+var stringExtension = "Curso de Apps para ios con Swift, muy chulo"
+stringExtension.numberOf(char: "u")
+
+
+
+// GESTIÓN DE ERRORES
+// Palabrejas: try, throw, throws, catch, do
+// toda función que pueda generar errores esta marcada con throw
+// Toda función que lanza errores es llamada con try
+
+func inverse(_ n: Double) throws -> Double {
+    guard n != 0 else{
+       throw NSError(domain: "Dividir por 0 no se puede", code: 402, userInfo: nil)
+    }
+    return 1/n
+}
+
+
+do {
+    try inverse(42)
+} catch  {
+    print("La fatidiamos! \(error.localizedDescription)")
+}
+
+
 
 
 //: ## Gestión de errores
