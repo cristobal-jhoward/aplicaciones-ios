@@ -43,7 +43,7 @@ class UniverseViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         // cabecera de cada seccion
-        return ""
+        return getAffiliation(forSection: section).rawValue
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
