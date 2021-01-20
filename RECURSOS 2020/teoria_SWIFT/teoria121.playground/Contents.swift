@@ -940,6 +940,142 @@ do {
 }
 
 
+// ENUM
+
+enum LetterType: CaseIterable {
+    case love
+    case business
+    case family
+    case friends
+}
+
+let letterType1 = LetterType.family
+let letterType2 = LetterType.love
+
+LetterType.allCases
+
+enum MailboxProperties {
+    
+    case capacity(Int)
+    case addres(String)
+}
+
+var mailboxProperty = MailboxProperties.capacity(50)
+mailboxProperty = .addres("Puerta del Sol, Madrid")
+
+var rojo = UIColor.blue
+
+rojo = .red
+
+let mailBoxType = MailboxProperties.capacity(30)
+
+switch(mailBoxType) {
+    case MailboxProperties.capacity(let count): print("La capacidad es \(count)")
+case MailboxProperties.addres(let adress): print("La direccion es \(adress)")
+}
+
+enum LetterSizes: Int {
+    case small = 10
+    case medium = 20
+    case big = 30
+}
+let letterSize = LetterSizes(rawValue: 1)
+
+enum LetterName:String {
+    case initial = "hello"
+    case close = "goodbye"
+}
+
+// GENERICOS
+
+let nums: [Int] = [1, 2, 3, 4]
+let numss: Array<Int> = [5, 6, 7, 8]
+
+
+let dict : [String : Int]?
+let dict2 : Dictionary<String, Int>?
+
+var maybeDouble : Double?
+var maybeInt : Optional<Int>
+
+var arrayString = ["Hola", "Adios", "Hastaluego", "quetal"]
+var arrayInt = [1, 2, 3, 4, 5, 6]
+var arrayDouble = [1.0, 2.0, 3.0, 4.0]
+
+//Funcion generica
+
+func enumerarElementosArray<T>(array: [T]){
+    for elemento in array {
+        print(elemento)
+    }
+}
+
+enumerarElementosArray(array: arrayString)
+enumerarElementosArray(array: arrayInt)
+enumerarElementosArray(array: arrayDouble)
+
+//Clase Generica
+
+class Pair<Left, Right>{
+    let left : Left
+    let right : Right
+    
+    init(left: Left, right: Right) {
+    
+    self.left = left
+    self.right = right
+   }
+  }
+
+let p1 = Pair(left: 4, right: "Hola")
+
+
+//Genericos con restricciones
+
+class Bucket<Value: Hashable>{
+    let val: Value
+    init(val: Value){
+        self.val = val
+    }
+}
+
+//let b2 = Bucket(val: p1)
+
+//PROTOCOLOS y DELEGADOS
+
+protocol ActorsFriendProtocol {
+    var name: String {get set}
+    var films: [String] {get set}
+    func sayHello()
+}
+
+class ActorProtocol : ActorsFriendProtocol{
+    var name: String = ""
+    
+    var films: [String] = []
+    
+    func sayHello() {
+        print("Hola Actor")
+    }
+    
+    var lastName: String = ""
+    
+    func sayGoodbye() {
+        print("Adios Actor")
+    }
+}
+
+
+let actorUno : ActorProtocol = ActorProtocol()
+
+actorUno.sayGoodbye()
+
+let actorDos : ActorsFriendProtocol = ActorProtocol()
+
+actorDos.sayHello()
+
+// PATRON
+
 
 
 //: ## Gestión de errores
@@ -1000,12 +1136,12 @@ do {
 //: ## Genéricos
 // Ejemplos que ya conocemos: Las colecciones
 
-let nums = [1,2,3,4,5]
-let numss : Array<Int> = [1,2,3,4,5]
-
-let dict : Dictionary<String, Int>?
-
-let maybeADouble : Optional<Double>
+//let nums = [1,2,3,4,5]
+//let numss : Array<Int> = [1,2,3,4,5]
+//
+//let dict : Dictionary<String, Int>?
+//
+//let maybeADouble : Optional<Double>
 
 
 // Class genérica
