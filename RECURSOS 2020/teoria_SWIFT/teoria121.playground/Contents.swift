@@ -1074,8 +1074,104 @@ let actorDos : ActorsFriendProtocol = ActorProtocol()
 
 actorDos.sayHello()
 
-// PATRON
+// DELEGAREMOS FUNCIONES DE UNA CLASE A OTRA
 
+protocol FriendsDelegate:AnyObject {
+    func orderPizza()
+    func takeABreak()
+}
+
+class FriendsFunctionsDelegate {
+    
+    weak var delegate: FriendsDelegate? = nil
+    
+    func pizza() {
+        delegate?.orderPizza()
+        
+        
+    }
+    
+    func sleep() {
+        delegate?.takeABreak()
+        
+    }
+    
+}
+
+class FriendsFunctions: FriendsDelegate {
+    func orderPizza() {
+        print("He pedido una pizza")
+    }
+    
+    func takeABreak() {
+        print("Me voy a dormir")
+    }
+}
+
+let friendsFuctionsDelegate = FriendsFunctionsDelegate()
+let friendsFunctions =  FriendsFunctions()
+
+friendsFuctionsDelegate.delegate = friendsFunctions
+
+friendsFuctionsDelegate.pizza()
+friendsFuctionsDelegate.sleep()
+
+// PARSEAR UN JSON con el protocolo CODABLE
+
+struct Coche: Codable {
+    
+    var marca: String
+    var potencia: Int
+    
+}
+
+let jeep = Coche(marca: "Renegada", potencia: 150)
+
+let jsonEncoder = JSONEncoder()
+
+do {
+    
+    let jsonDatos = try jsonEncoder.encode(jeep)
+    let jsonString = String(data: jsonDatos, encoding: .utf8)
+    print(jsonString!)
+    
+    let jsonDecoder = JSONDecoder()
+    
+    let car = try jsonDecoder.decode(Coche.self, from: jsonDatos)
+    print(car)
+    
+    
+} catch  {
+    
+    print("error")
+    
+}
+
+let json = """
+{
+
+"fiat":{
+"marca":"Fiat 500",
+"potencia":1200
+},
+"chrysler":{
+"marca":"PT Cruiser",
+"potencia":1500
+},
+"ford":{
+"marca":"KA",
+"potencia":1000
+},
+}
+""".data(using: .utf8)!
+
+
+
+let diccionario = try JSONDecoder().decode([String : Coche].self, from: json)
+
+diccionario.forEach {
+    print("\($0.key) : \($0.value)")
+}
 
 
 //: ## Gestión de errores

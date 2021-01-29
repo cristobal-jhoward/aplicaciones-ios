@@ -39,9 +39,10 @@
 		AF289C0F25B20E2200DCACE5 /* obiwan.caf in Resources */ = {isa = PBXBuildFile; fileRef = AF289BF025B20E2200DCACE5 /* obiwan.caf */; };
 		AF289C1025B20E2200DCACE5 /* greedo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF289BF125B20E2200DCACE5 /* greedo.jpg */; };
 		AF289C1225B20E9C00DCACE5 /* sable.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AF289C1125B20E9C00DCACE5 /* sable.mp3 */; };
-		AF289C1625B2136400DCACE5 /* personajesStarWars.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF289C1525B2136400DCACE5 /* personajesStarWars.swift */; };
 		AF289C1825B2142400DCACE5 /* StarWarsUniverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF289C1725B2142400DCACE5 /* StarWarsUniverse.swift */; };
 		AF289C1A25B2159300DCACE5 /* UniverseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF289C1925B2159300DCACE5 /* UniverseViewController.swift */; };
+		AF2AEA4A25C494EE0055BD98 /* personajesStarWars.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2AEA4925C494EE0055BD98 /* personajesStarWars.swift */; };
+		AF2AEA4C25C495E70055BD98 /* ForceSensitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2AEA4B25C495E70055BD98 /* ForceSensitive.swift */; };
 		AF2DBF51256C3BFD0055D35B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DBF50256C3BFD0055D35B /* AppDelegate.swift */; };
 		AF2DBF53256C3BFD0055D35B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DBF52256C3BFD0055D35B /* SceneDelegate.swift */; };
 		AF2DBF5A256C3BFE0055D35B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF2DBF59256C3BFE0055D35B /* Assets.xcassets */; };
@@ -90,9 +91,10 @@
 		AF289BF025B20E2200DCACE5 /* obiwan.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = obiwan.caf; path = "../../../../RECURSOS 2020/APPSW_05/obiwan.caf"; sourceTree = "<group>"; };
 		AF289BF125B20E2200DCACE5 /* greedo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = greedo.jpg; path = "../../../../RECURSOS 2020/APPSW_05/greedo.jpg"; sourceTree = "<group>"; };
 		AF289C1125B20E9C00DCACE5 /* sable.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sable.mp3; path = "../../../../RECURSOS 2020/APPSW_05/sable.mp3"; sourceTree = "<group>"; };
-		AF289C1525B2136400DCACE5 /* personajesStarWars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = personajesStarWars.swift; path = "../../../../RECURSOS 2020/APPSW_05/personajesStarWars.swift"; sourceTree = "<group>"; };
 		AF289C1725B2142400DCACE5 /* StarWarsUniverse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsUniverse.swift; sourceTree = "<group>"; };
 		AF289C1925B2159300DCACE5 /* UniverseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseViewController.swift; sourceTree = "<group>"; };
+		AF2AEA4925C494EE0055BD98 /* personajesStarWars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = personajesStarWars.swift; path = "../../../../RECURSOS 2020/APPSW_06/personajesStarWars.swift"; sourceTree = "<group>"; };
+		AF2AEA4B25C495E70055BD98 /* ForceSensitive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceSensitive.swift; sourceTree = "<group>"; };
 		AF2DBF4D256C3BFD0055D35B /* Star Wars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star Wars.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2DBF50256C3BFD0055D35B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF2DBF52256C3BFD0055D35B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,7 +160,7 @@
 		AF2DBF64256C3D300055D35B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AF289C1525B2136400DCACE5 /* personajesStarWars.swift */,
+				AF2AEA4925C494EE0055BD98 /* personajesStarWars.swift */,
 				AF289BDA25B20E2200DCACE5 /* boba.jpg */,
 				AF289BEC25B20E2200DCACE5 /* boba.wav */,
 				AF289BE825B20E2200DCACE5 /* c3po.caf */,
@@ -203,6 +205,7 @@
 				AF9B3760258BB348005BECB4 /* StarWarsAffiliation.swift */,
 				AF9B3762258BB362005BECB4 /* StarWarsCharacter.swift */,
 				AF289C1725B2142400DCACE5 /* StarWarsUniverse.swift */,
+				AF2AEA4B25C495E70055BD98 /* ForceSensitive.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -341,10 +344,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF2DBF51256C3BFD0055D35B /* AppDelegate.swift in Sources */,
+				AF2AEA4C25C495E70055BD98 /* ForceSensitive.swift in Sources */,
 				AF289C1A25B2159300DCACE5 /* UniverseViewController.swift in Sources */,
 				AF289C1825B2142400DCACE5 /* StarWarsUniverse.swift in Sources */,
 				AF9B3766258BB5FB005BECB4 /* CharacterViewController.swift in Sources */,
-				AF289C1625B2136400DCACE5 /* personajesStarWars.swift in Sources */,
+				AF2AEA4A25C494EE0055BD98 /* personajesStarWars.swift in Sources */,
 				AF9B3761258BB348005BECB4 /* StarWarsAffiliation.swift in Sources */,
 				AF9B3763258BB362005BECB4 /* StarWarsCharacter.swift in Sources */,
 				AF7B10CA25ACCB4500CAF2A4 /* WikiViewController.swift in Sources */,
