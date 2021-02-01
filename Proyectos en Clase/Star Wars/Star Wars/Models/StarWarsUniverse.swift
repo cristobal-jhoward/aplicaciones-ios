@@ -50,7 +50,7 @@ typealias StarWarsDictionary = [StarWarsAffiliation : StarWarsArray]
     
     func character(atIndex index:Int, forAffiliation affiliation: StarWarsAffiliation) -> StarWarsCharacter{
         
-        let chars = dict[affiliation]!
+        let chars = dict[affiliation]!.sorted()
         let char = chars[index]
         
         return char

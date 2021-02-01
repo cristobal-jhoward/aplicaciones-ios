@@ -67,3 +67,61 @@ class StarWarsCharacter {
 
 }
 
+extension StarWarsCharacter: CustomDebugStringConvertible {
+    var debugDescription: String {
+        get {
+            if let name = name, let alias = alias {
+                return "<\(type(of: self))\(name) -- \(alias)>"
+            }
+            return "<\(type(of: self))>"
+        }
+    }
+    
+    
+}
+
+extension StarWarsCharacter: Comparable, ProxyForComparisionAndShorting {
+    var proxyForShorting: String {
+        
+        get {
+            return proxyForComparision
+        }
+    }
+    
+    
+    var proxyForComparision: String {
+        get {
+            return "\(firstName ?? "")\(lastName ?? "")\(alias ?? "")\(url)"
+        }
+    }
+    
+    
+    static func == (lhs: StarWarsCharacter, rhs: StarWarsCharacter) -> Bool {
+        
+        guard ( lhs !== rhs ) else {
+            return true
+        }
+        
+        guard (type(of: lhs) == type(of: rhs)) else {
+            return true
+        }
+        
+        return lhs.proxyForComparision == rhs.proxyForComparision
+    }
+    
+    
+    
+    static func < (lhs: StarWarsCharacter, rhs: StarWarsCharacter) -> Bool {
+        
+        //return lhs.proxyForComparision < rhs.proxyForComparision
+        return lhs.proxyForShorting < rhs.proxyForShorting
+    }
+}
+
+@objc protocol ProxyForComparisionAndShorting {
+    
+    var proxyForComparision : String { get }
+    
+    var proxyForShorting : String { get }
+}
+

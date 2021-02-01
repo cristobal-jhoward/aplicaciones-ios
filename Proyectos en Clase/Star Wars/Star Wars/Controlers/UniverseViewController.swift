@@ -70,7 +70,14 @@ class UniverseViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // pasar al detalle
+        
+        // Averiguar el personaje
+        let char = character(forIndexPath: indexPath)
+        
+        let charVC = CharacterViewController(model: char)
+        
+        navigationController?.pushViewController(charVC, animated: true)
+        
     }
     
     func getAffiliation(forSection section: Int) -> StarWarsAffiliation {

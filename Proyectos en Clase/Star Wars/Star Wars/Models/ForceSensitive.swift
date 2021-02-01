@@ -54,3 +54,22 @@ class ForceSensitive: StarWarsCharacter {
     }
     
 }
+
+extension ForceSensitive {
+    
+    override var proxyForComparision: String {
+        get {
+          return "\(super.proxyForComparision)\(midichlorians)"
+        }
+    }
+    
+    override var proxyForShorting: String {
+        
+        get {
+            let isSith = affiliation == .galacticEmpire || affiliation == .firstOrder ? "Z" : "X"
+            
+            return "\(isSith)\(super.proxyForComparision)\(midichlorians)"
+        }
+        
+    }
+}
