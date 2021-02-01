@@ -41,7 +41,6 @@
 		AF289C1225B20E9C00DCACE5 /* sable.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AF289C1125B20E9C00DCACE5 /* sable.mp3 */; };
 		AF289C1825B2142400DCACE5 /* StarWarsUniverse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF289C1725B2142400DCACE5 /* StarWarsUniverse.swift */; };
 		AF289C1A25B2159300DCACE5 /* UniverseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF289C1925B2159300DCACE5 /* UniverseViewController.swift */; };
-		AF2AEA4A25C494EE0055BD98 /* personajesStarWars.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2AEA4925C494EE0055BD98 /* personajesStarWars.swift */; };
 		AF2AEA4C25C495E70055BD98 /* ForceSensitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2AEA4B25C495E70055BD98 /* ForceSensitive.swift */; };
 		AF2DBF51256C3BFD0055D35B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DBF50256C3BFD0055D35B /* AppDelegate.swift */; };
 		AF2DBF53256C3BFD0055D35B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DBF52256C3BFD0055D35B /* SceneDelegate.swift */; };
@@ -52,6 +51,10 @@
 		AF7B10CA25ACCB4500CAF2A4 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B10C825ACCB4500CAF2A4 /* WikiViewController.swift */; };
 		AF7B10CB25ACCB4500CAF2A4 /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF7B10C925ACCB4500CAF2A4 /* WikiViewController.xib */; };
 		AF7B10CE25ACCBD500CAF2A4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF7B10CD25ACCBD500CAF2A4 /* WebKit.framework */; };
+		AF96090C25C88BEA00D72605 /* forceSensitives.json in Resources */ = {isa = PBXBuildFile; fileRef = AF96090A25C88BEA00D72605 /* forceSensitives.json */; };
+		AF96090D25C88BEA00D72605 /* regularCharacters.json in Resources */ = {isa = PBXBuildFile; fileRef = AF96090B25C88BEA00D72605 /* regularCharacters.json */; };
+		AF96090F25C88CD800D72605 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF96090E25C88CD800D72605 /* Errors.swift */; };
+		AF96091125C88EAD00D72605 /* JSONProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF96091025C88EAD00D72605 /* JSONProcessing.swift */; };
 		AF9B3761258BB348005BECB4 /* StarWarsAffiliation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B3760258BB348005BECB4 /* StarWarsAffiliation.swift */; };
 		AF9B3763258BB362005BECB4 /* StarWarsCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B3762258BB362005BECB4 /* StarWarsCharacter.swift */; };
 		AF9B3766258BB5FB005BECB4 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B3764258BB5FA005BECB4 /* CharacterViewController.swift */; };
@@ -93,7 +96,6 @@
 		AF289C1125B20E9C00DCACE5 /* sable.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sable.mp3; path = "../../../../RECURSOS 2020/APPSW_05/sable.mp3"; sourceTree = "<group>"; };
 		AF289C1725B2142400DCACE5 /* StarWarsUniverse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsUniverse.swift; sourceTree = "<group>"; };
 		AF289C1925B2159300DCACE5 /* UniverseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseViewController.swift; sourceTree = "<group>"; };
-		AF2AEA4925C494EE0055BD98 /* personajesStarWars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = personajesStarWars.swift; path = "../../../../RECURSOS 2020/APPSW_06/personajesStarWars.swift"; sourceTree = "<group>"; };
 		AF2AEA4B25C495E70055BD98 /* ForceSensitive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceSensitive.swift; sourceTree = "<group>"; };
 		AF2DBF4D256C3BFD0055D35B /* Star Wars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star Wars.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2DBF50256C3BFD0055D35B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,10 @@
 		AF7B10C825ACCB4500CAF2A4 /* WikiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
 		AF7B10C925ACCB4500CAF2A4 /* WikiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
 		AF7B10CD25ACCBD500CAF2A4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		AF96090A25C88BEA00D72605 /* forceSensitives.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = forceSensitives.json; path = "../../../../RECURSOS 2020/APPSW_07/forceSensitives.json"; sourceTree = "<group>"; };
+		AF96090B25C88BEA00D72605 /* regularCharacters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = regularCharacters.json; path = "../../../../RECURSOS 2020/APPSW_07/regularCharacters.json"; sourceTree = "<group>"; };
+		AF96090E25C88CD800D72605 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		AF96091025C88EAD00D72605 /* JSONProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONProcessing.swift; sourceTree = "<group>"; };
 		AF9B3760258BB348005BECB4 /* StarWarsAffiliation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAffiliation.swift; sourceTree = "<group>"; };
 		AF9B3762258BB362005BECB4 /* StarWarsCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCharacter.swift; sourceTree = "<group>"; };
 		AF9B3764258BB5FA005BECB4 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
@@ -160,7 +166,8 @@
 		AF2DBF64256C3D300055D35B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AF2AEA4925C494EE0055BD98 /* personajesStarWars.swift */,
+				AF96090A25C88BEA00D72605 /* forceSensitives.json */,
+				AF96090B25C88BEA00D72605 /* regularCharacters.json */,
 				AF289BDA25B20E2200DCACE5 /* boba.jpg */,
 				AF289BEC25B20E2200DCACE5 /* boba.wav */,
 				AF289BE825B20E2200DCACE5 /* c3po.caf */,
@@ -206,6 +213,8 @@
 				AF9B3762258BB362005BECB4 /* StarWarsCharacter.swift */,
 				AF289C1725B2142400DCACE5 /* StarWarsUniverse.swift */,
 				AF2AEA4B25C495E70055BD98 /* ForceSensitive.swift */,
+				AF96090E25C88CD800D72605 /* Errors.swift */,
+				AF96091025C88EAD00D72605 /* JSONProcessing.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,6 +320,7 @@
 				AF289C0225B20E2200DCACE5 /* palpatine.jpg in Resources */,
 				AF289C0D25B20E2200DCACE5 /* jabba.jpg in Resources */,
 				AF289BFA25B20E2200DCACE5 /* yoda.caf in Resources */,
+				AF96090C25C88BEA00D72605 /* forceSensitives.json in Resources */,
 				AF2DBF6A256C3EC90055D35B /* leia.caf in Resources */,
 				AF2DBF5D256C3BFE0055D35B /* LaunchScreen.storyboard in Resources */,
 				AF289C0125B20E2200DCACE5 /* r2-d2.caf in Resources */,
@@ -318,6 +328,7 @@
 				AF289BFB25B20E2200DCACE5 /* kylo.jpg in Resources */,
 				AF289C0A25B20E2200DCACE5 /* c3po.jpg in Resources */,
 				AF2DBF6B256C3EC90055D35B /* leia.jpg in Resources */,
+				AF96090D25C88BEA00D72605 /* regularCharacters.json in Resources */,
 				AF289BF425B20E2200DCACE5 /* palpatine.caf in Resources */,
 				AF289BF925B20E2200DCACE5 /* boba.jpg in Resources */,
 				AF289BF525B20E2200DCACE5 /* motti.caf in Resources */,
@@ -344,12 +355,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF2DBF51256C3BFD0055D35B /* AppDelegate.swift in Sources */,
+				AF96091125C88EAD00D72605 /* JSONProcessing.swift in Sources */,
 				AF2AEA4C25C495E70055BD98 /* ForceSensitive.swift in Sources */,
 				AF289C1A25B2159300DCACE5 /* UniverseViewController.swift in Sources */,
 				AF289C1825B2142400DCACE5 /* StarWarsUniverse.swift in Sources */,
 				AF9B3766258BB5FB005BECB4 /* CharacterViewController.swift in Sources */,
-				AF2AEA4A25C494EE0055BD98 /* personajesStarWars.swift in Sources */,
 				AF9B3761258BB348005BECB4 /* StarWarsAffiliation.swift in Sources */,
+				AF96090F25C88CD800D72605 /* Errors.swift in Sources */,
 				AF9B3763258BB362005BECB4 /* StarWarsCharacter.swift in Sources */,
 				AF7B10CA25ACCB4500CAF2A4 /* WikiViewController.swift in Sources */,
 				AF2DBF53256C3BFD0055D35B /* SceneDelegate.swift in Sources */,
