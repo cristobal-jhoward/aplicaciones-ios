@@ -25,17 +25,52 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.windowScene = windowScene
         
-        let model = StarWarsUniverse(character: chars )
+        do {
+            var chars = [StarWarsCharacter]()
+            
+            let jsonRegular = try loadFromLocalFile(fileName: "regularCharacters.json")
+            
+            for dict in jsonRegular {
+                
+                do {
+                    let char = try decode(starWarsCharacter: dict)
+                    chars.append(char)
+                } catch  {
+                    print("Error al procesar el JSON")
+                }
+            }
+            
+            let jsonForce = try loadFromLocalFile(fileName: "forceSensitives.json")
+            
+            _ = jsonForce.map () {
+                
+                do {
+                    let char = try decode(forceSensitive: $0)
+                    chars.append(char)
+                } catch  {
+                    print("Error al procesar el JSON")
+                }
+                
+            }
+            
+            let model = StarWarsUniverse(character: chars )
+            
+            let uVC = UniverseViewController(model: model)
+            
+            let uNav = UINavigationController(rootViewController: uVC)
+            
+            uNav.navigationBar.barTintColor = .systemGray6
+            
+            window?.rootViewController = uNav
+            
+            window?.makeKeyAndVisible()
+        } catch  {
+            
+            fatalError("Error while loading JSON")
+            
+        }
         
-        let uVC = UniverseViewController(model: model)
-        
-        let uNav = UINavigationController(rootViewController: uVC)
-        
-        uNav.navigationBar.barTintColor = .systemGray6
-        
-        window?.rootViewController = uNav
-        
-        window?.makeKeyAndVisible()
+
         
     }
 
