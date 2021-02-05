@@ -66,25 +66,92 @@ func decode(starWarsCharacter json: JSONDictionary) throws -> StarWarsCharacter 
     
 }
 
-func decode(forceSensitive json: JSONDictionary) throws -> ForceSensitive {
+func decode(starWarsCharacter json: JSONDictionary?) throws -> StarWarsCharacter {
     
-    return ForceSensitive(
-    sithWithFirstName: "Anakin",
-    lastName: "Skywalker", alias: "Darth Vader",
-    soundData: try! Data(contentsOf: Bundle.main.url(forResource: "vader", withExtension: "caf")!),
-    photo: UIImage(named: "vader.jpg")!,
-    url: URL(string: "https://en.wikipedia.org/wiki/Darth_Vader")!,
-    midichlorians: 15000
+    if case .some( let jsonDict ) = json {
+        return try decode(starWarsCharacter: jsonDict)
+        
+    } else {
+        throw StarWarsError.nilJSONObject
+    }
     
-    )
+  //  guard let json = json else {
+  //      return try decode(starWarsCharacter: json)
+   // }
     
 }
 
+func decode(forceSensitive json: JSONDictionary) throws -> ForceSensitive {
+    
+    guard let urlString = json["url"] as? String, let url = URL(string: urlString) else {
+        throw StarWarsError.wrongURLFormatForJSONresource
+    }
+    
+    guard let imageName = json["imageFile"] as? String, let image = UIImage(named: imageName) else {
+        throw StarWarsError.resourcePointedByURLNotReachable
+    }
+    
+    guard let soundName = json["soundFile"] as? String,
+        let soundURL = Bundle.main.URLForResource(soundName),
+        let sound = try? Data(contentsOf: soundURL) else{
+            throw StarWarsError.resourcePointedByURLNotReachable
+    }
+    
+    guard let jedi = json["jedi"] as? Bool, let sith = json["sith"] as? Bool, let md = json["midichlorians"] as? Int else {
+        throw StarWarsError.wrongJSONFormat
+    }
+    
+    guard jedi != sith else {
+        throw StarWarsError.wrongJSONFormat
+    }
+    
+    let firstName = json["firstName"] as? String
+    let lastName = json["lastName"] as? String
+    let alias = json["alias"] as? String
+    
+    if let affiliation = json["affiliation"] as? String {
+        
+        let aff = StarWarsAffiliation.byName(affiliation)
+        
+        if aff == .firstOrder {
+            return ForceSensitive(firstName: firstName, lastName: lastName, alias: alias, soundData: sound, photo: image, url: url, affiliation: aff, midichlorians: md)
+            
+        }else if aff == .galacticEmpire {
+            
+            return ForceSensitive(sithWithFirstName: firstName, lastName: lastName, alias: alias, soundData: sound, photo: image, url: url, midichlorians: md)
+            
+        } else {
+            
+            return ForceSensitive(jediWithFirstName: firstName, lastName: lastName, alias: alias, soundData: sound, photo: image, url: url, midichlorians: md)
+        }
+            
+    } else {
+            
+            throw StarWarsError.wrongJSONFormat
+        }
+}
+
+    
+    func decode(forceSensitive json: JSONDictionary?) throws -> ForceSensitive {
+        
+        if case .some( let jsonDict ) = json {
+            return try decode(forceSensitive: jsonDict)
+            
+        } else {
+            throw StarWarsError.nilJSONObject
+        }
+        
+    }
+
 func loadFromLocalFile(fileName name: String, bundle: Bundle = Bundle.main) throws -> [[String: JSONObject]] {
     
-    //Decodificar todo el archivo
-    
-    let array = [ ["nombre": "Ana", "edad": 27 ] ]
-    return array
-    
+    if let url = bundle.URLForResource(name),
+        let data = try? Data(contentsOf: url),
+        let maybeArray = ( try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) ) as? JSONArray?,
+        let array = maybeArray {
+        
+        return array
+    } else {
+        throw StarWarsError.jsonParsingError
+    }
 }
