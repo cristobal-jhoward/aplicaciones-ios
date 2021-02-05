@@ -12,6 +12,8 @@ class UniverseViewController: UITableViewController {
     
     let model : StarWarsUniverse
     
+    var delegate : UniverseViewControllerDelegate?
+    
     init(model: StarWarsUniverse){
         self.model = model
         super.init(nibName: nil, bundle: nil)
@@ -74,9 +76,11 @@ class UniverseViewController: UITableViewController {
         // Averiguar el personaje
         let char = character(forIndexPath: indexPath)
         
-        let charVC = CharacterViewController(model: char)
+        delegate?.universeViewController(self, didSelectCharacter: char)
         
-        navigationController?.pushViewController(charVC, animated: true)
+        // let charVC = CharacterViewController(model: char)
+        
+        // navigationController?.pushViewController(charVC, animated: true)
         
     }
     
@@ -105,4 +109,10 @@ class UniverseViewController: UITableViewController {
 
 
 
+}
+
+
+protocol UniverseViewControllerDelegate {
+    
+    func universeViewController(_ vc: UniverseViewController, didSelectCharacter character: StarWarsCharacter)
 }

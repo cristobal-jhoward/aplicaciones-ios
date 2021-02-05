@@ -59,9 +59,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let uNav = UINavigationController(rootViewController: uVC)
             
+            let charVC = CharacterViewController(model: model.character(atIndex: 0, forAffiliation: .galacticEmpire))
+            
+            let charNav = UINavigationController(rootViewController: charVC)
+            
+            let splitVC = UISplitViewController()
+            
+            splitVC.viewControllers = [uNav, charNav]
+            
+            
+            
             uNav.navigationBar.barTintColor = .systemGray6
             
-            window?.rootViewController = uNav
+            window?.rootViewController = splitVC
+            
+            uVC.delegate = charVC
             
             window?.makeKeyAndVisible()
         } catch  {

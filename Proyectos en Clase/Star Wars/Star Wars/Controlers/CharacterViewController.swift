@@ -88,3 +88,18 @@ class CharacterViewController: UIViewController {
     
 
 }
+
+extension CharacterViewController: UniverseViewControllerDelegate {
+    
+    func universeViewController(_ vc: UniverseViewController, didSelectCharacter character: StarWarsCharacter) {
+        
+        model = character
+        
+        syncModelWithView()
+        
+    }
+    
+    
+    
+    
+}
