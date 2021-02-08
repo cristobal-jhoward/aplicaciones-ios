@@ -30,6 +30,23 @@ class WikiViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // Alta en notificaciones
+    
+    let nc = NotificationCenter.default
+    
+    func startObserving() {
+        
+        nc.addObserver(forName: CharacterDidChangeNotification, object: nil, queue: nil) { n in
+            let info = n.userInfo!
+            
+            let char = info[CharacterKey] as? StarWarsCharacter
+            
+            self.model = char!
+            
+            self.syncModelWithView()
+        }
+    }
+    
     //Ciclo de vida
 
     override func viewDidLoad() {
@@ -40,7 +57,15 @@ class WikiViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
         
         super.viewWillAppear(animated)
         
+        startObserving()
+        
         syncModelWithView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        nc.removeObserver(self)
     }
     
     // Metodos de protocolo

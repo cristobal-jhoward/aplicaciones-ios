@@ -8,6 +8,12 @@
 
 import UIKit
 
+let CharacterDidChangeNotification = Notification.Name(rawValue: "Selected Character did change")
+
+let CharacterKey = "key"
+
+
+
 class UniverseViewController: UITableViewController {
     
     let model : StarWarsUniverse
@@ -81,6 +87,13 @@ class UniverseViewController: UITableViewController {
         // let charVC = CharacterViewController(model: char)
         
         // navigationController?.pushViewController(charVC, animated: true)
+        
+        let nc = NotificationCenter.default
+        
+        let notif = Notification(name: CharacterDidChangeNotification,
+                                 object: self,
+                                 userInfo: [CharacterKey : char])
+        nc.post(notif)
         
     }
     
