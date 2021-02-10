@@ -59,21 +59,40 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let uNav = UINavigationController(rootViewController: uVC)
             
-            let charVC = CharacterViewController(model: model.character(atIndex: 0, forAffiliation: .galacticEmpire))
+            uNav.navigationBar.barTintColor = .darkText
             
-            let charNav = UINavigationController(rootViewController: charVC)
+            uNav.navigationBar.titleTextAttributes = [ .foregroundColor: UIColor.white ]
             
-            let splitVC = UISplitViewController()
+            uNav.navigationBar.tintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
             
-            splitVC.viewControllers = [uNav, charNav]
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                
+                window?.rootViewController = uNav
+                
+                uVC.delegate = uVC
+                
+            } else if UIDevice.current.userInterfaceIdiom == .pad {
+                
+                let charVC = CharacterViewController(model: model.character(atIndex: 0, forAffiliation: .galacticEmpire))
+                
+                let charNav = UINavigationController(rootViewController: charVC)
+                
+                charNav.navigationBar.barTintColor = .darkText
+                
+                charNav.navigationBar.titleTextAttributes = [ .foregroundColor: UIColor.white ]
+                
+                charNav.navigationBar.tintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+                
+                let splitVC = UISplitViewController()
+                
+                splitVC.viewControllers = [uNav, charNav]
+                
+                window?.rootViewController = splitVC
+                
+                uVC.delegate = charVC
+                
+            }
             
-            
-            
-            uNav.navigationBar.barTintColor = .systemGray6
-            
-            window?.rootViewController = splitVC
-            
-            uVC.delegate = charVC
             
             window?.makeKeyAndVisible()
         } catch  {

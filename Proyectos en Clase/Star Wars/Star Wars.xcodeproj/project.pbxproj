@@ -52,6 +52,7 @@
 		AF7B10CA25ACCB4500CAF2A4 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7B10C825ACCB4500CAF2A4 /* WikiViewController.swift */; };
 		AF7B10CB25ACCB4500CAF2A4 /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF7B10C925ACCB4500CAF2A4 /* WikiViewController.xib */; };
 		AF7B10CE25ACCBD500CAF2A4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF7B10CD25ACCBD500CAF2A4 /* WebKit.framework */; };
+		AF84188A25D468C600BF4034 /* logoSW.png in Resources */ = {isa = PBXBuildFile; fileRef = AF84188925D468C600BF4034 /* logoSW.png */; };
 		AF96090C25C88BEA00D72605 /* forceSensitives.json in Resources */ = {isa = PBXBuildFile; fileRef = AF96090A25C88BEA00D72605 /* forceSensitives.json */; };
 		AF96090D25C88BEA00D72605 /* regularCharacters.json in Resources */ = {isa = PBXBuildFile; fileRef = AF96090B25C88BEA00D72605 /* regularCharacters.json */; };
 		AF96090F25C88CD800D72605 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF96090E25C88CD800D72605 /* Errors.swift */; };
@@ -110,6 +111,7 @@
 		AF7B10C825ACCB4500CAF2A4 /* WikiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
 		AF7B10C925ACCB4500CAF2A4 /* WikiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
 		AF7B10CD25ACCBD500CAF2A4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		AF84188925D468C600BF4034 /* logoSW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoSW.png; path = "../../../../RECURSOS 2020/APPSW_11/logoSW.png"; sourceTree = "<group>"; };
 		AF96090A25C88BEA00D72605 /* forceSensitives.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = forceSensitives.json; path = "../../../../RECURSOS 2020/APPSW_07/forceSensitives.json"; sourceTree = "<group>"; };
 		AF96090B25C88BEA00D72605 /* regularCharacters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = regularCharacters.json; path = "../../../../RECURSOS 2020/APPSW_07/regularCharacters.json"; sourceTree = "<group>"; };
 		AF96090E25C88CD800D72605 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				AF96090A25C88BEA00D72605 /* forceSensitives.json */,
 				AF96090B25C88BEA00D72605 /* regularCharacters.json */,
+				AF84188925D468C600BF4034 /* logoSW.png */,
 				AF289BDA25B20E2200DCACE5 /* boba.jpg */,
 				AF289BEC25B20E2200DCACE5 /* boba.wav */,
 				AF289BE825B20E2200DCACE5 /* c3po.caf */,
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF289BF225B20E2200DCACE5 /* kylo.caf in Resources */,
+				AF84188A25D468C600BF4034 /* logoSW.png in Resources */,
 				AF289C0525B20E2200DCACE5 /* chewie.caf in Resources */,
 				AF289BF325B20E2200DCACE5 /* luke.caf in Resources */,
 				AF289BFC25B20E2200DCACE5 /* motti.jpg in Resources */,

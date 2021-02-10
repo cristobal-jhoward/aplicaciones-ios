@@ -30,6 +30,19 @@ class UniverseViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // Ciclo de vida
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        
+        imageView.contentMode = UIView.ContentMode.scaleAspectFit
+        
+        imageView.image = UIImage(named: "logoSW")
+        
+        navigationItem.titleView = imageView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,6 +135,15 @@ class UniverseViewController: UITableViewController {
 
 
 
+}
+
+extension UniverseViewController: UniverseViewControllerDelegate {
+    
+    func universeViewController(_ vc: UniverseViewController, didSelectCharacter character: StarWarsCharacter) {
+        let charVC = CharacterViewController(model: character)
+        
+        navigationController?.pushViewController(charVC, animated: true)
+    }
 }
 
 
